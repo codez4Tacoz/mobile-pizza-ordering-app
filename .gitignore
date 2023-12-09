@@ -31,3 +31,12 @@ build/
 
 ### VS Code ###
 .vscode/
+
+#### Angular ####
+app/node
+app/node_modules
+app/dist
+app/.editorconfig
+app/package-lock.json
+app/.angular
+app/.vscode
