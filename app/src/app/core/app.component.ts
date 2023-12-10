@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import {MenuComponent} from "../features/menu/component/menu.component";
+import {MenuComponent} from "../features/menu/component/menu/menu.component";
 
 @Component({
   selector: 'app-root',

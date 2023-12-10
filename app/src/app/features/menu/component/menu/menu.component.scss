@@ -1,0 +1,14 @@
+/* menu.component.scss */
+
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.menu-item-list {
+  width: 100%;
+  overflow-y: auto;
+}

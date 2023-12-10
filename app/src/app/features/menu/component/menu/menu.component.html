@@ -1,0 +1,5 @@
+<h1>Menu</h1>
+
+<div class="menu-item-list" *ngIf="menu$ | async as menuItems">
+  <app-menu-list-item *ngFor="let menuItem of menuItems" [item]="menuItem"></app-menu-list-item>
+</div>
