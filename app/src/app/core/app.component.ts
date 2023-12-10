@@ -11,5 +11,5 @@ import {MenuComponent} from "../features/menu/component/menu.component";
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'app';
+  title = 'Pizzasaurus';
 }

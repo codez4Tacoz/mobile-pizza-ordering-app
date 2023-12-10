@@ -6,11 +6,11 @@ import {Observable} from "rxjs";
   providedIn: 'root'
 })
 export class MenuService {
-  menuUrl : string = `api/hello`;
+  menuUrl : string = `api/menu`;
 
   constructor(private http: HttpClient) { }
 
   getMenu() :Observable<any>    {
-    return this.http.get(this.menuUrl, {responseType: 'text'});
+    return this.http.get(this.menuUrl );
   }
 }

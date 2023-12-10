@@ -11,7 +11,7 @@ public class PizzaApplication {
     public static void main(String[] args) {
         SpringApplication.run(PizzaApplication.class, args);
         System.out.println("test Hello world");
-        log.info("Hello world logging - thanks Lombok");
+        log.info("Hello world has logging - thanks, Lombok!");
     }
 
 }

@@ -13,9 +13,9 @@ import {AsyncPipe} from "@angular/common";
   styleUrl: './menu.component.scss'
 })
 export class MenuComponent implements OnInit{
+  menu$: Observable<string> | undefined;
 
   private menuService = inject(MenuService);
-  menu$: Observable<string> | undefined;
 
   ngOnInit(): void {
     this.menu$ = this.menuService.getMenu();
