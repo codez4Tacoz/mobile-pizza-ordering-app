@@ -21,7 +21,8 @@ public class MenuItem {
     @Column(nullable = true)
     private String description;
 
-    private float unit_price;
+    //TODO when we add other menu item types, we'll add a unit price to menuItem class... but for now the pizza menu items will vary by
+    //private Float unit_price;
 
 
 }
