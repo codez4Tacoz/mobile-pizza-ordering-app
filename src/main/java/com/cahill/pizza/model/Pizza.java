@@ -13,16 +13,17 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Pizza extends MenuItem {
+    @Id
+    private Integer pizzaId;
 
-    @Enumerated(EnumType.STRING)
-    private PizzaSize size;
+    private String name;
+    private float basePrice;
+/*    private PizzaSize size;
 
-    @Enumerated(EnumType.STRING)
-    private PizzaBase base;
+    private PizzaBase base;*/
 
-    @ManyToMany
-    @JoinTable(name = "pizza_toppings",
-            joinColumns = @JoinColumn(name = "pizza_id"),
-            inverseJoinColumns = @JoinColumn(name = "topping_id"))
-    private Set<Topping> toppings;
+
+    //private Set<Topping> toppings;
+
+
 }
