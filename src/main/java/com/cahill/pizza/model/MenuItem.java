@@ -1,15 +1,14 @@
 package com.cahill.pizza.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Table;
 
 @Data
-@Entity
-@Table(name="menu_item")
+@Table("menu_item")
 @NoArgsConstructor
 @AllArgsConstructor
 public class MenuItem {

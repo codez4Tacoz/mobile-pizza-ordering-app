@@ -1,15 +1,13 @@
 package com.cahill.pizza.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@Entity
-@Table(name="menu_item_type")
+@Table("menu_item_type")
 @NoArgsConstructor
 @AllArgsConstructor
 public class MenuItemType {
