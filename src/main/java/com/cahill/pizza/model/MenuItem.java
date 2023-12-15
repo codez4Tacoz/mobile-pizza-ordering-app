@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 
+import java.util.List;
+
 @Data
 @Table("menu_item")
 @NoArgsConstructor
@@ -22,6 +24,9 @@ public class MenuItem {
     private String size;
     private Float price;
     private boolean isSpecialty;
+
+    private List<String> sizeNames;
+    private List<String> prices;
 
     //private MenuItemPrice[] prices;
     //private Topping[] defaultToppings;
