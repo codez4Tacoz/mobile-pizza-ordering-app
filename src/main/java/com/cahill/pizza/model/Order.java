@@ -15,7 +15,7 @@ public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    //private MenuItem orderItems;
+    //private Pizza orderItems;
     private float subTotalAmount;
     private float taxAmount;
     private float totalAmount;*/

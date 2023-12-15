@@ -12,23 +12,19 @@ CREATE TABLE IF NOT EXISTS menu_item_type (
 INSERT INTO menu_item_type (name) VALUES ('Pizza');
 
 
--- MenuItem table with isSpecialty boolean.
--- -- I don't love having this isSpecialty boolean here...bc it won't apply to other menu item types
--- alternatives would be possibly an "isCustomizable" flag... which would possibly apply to other menu items (sub sandwiches?)
--- OR to create another menuItem type that is "specialty pizza"...
--- i imagine that the frontend will eventually group menu items by the menuItemType
--- Update MenuItem table without price
-CREATE TABLE IF NOT EXISTS menu_item (
+-- Pizza table (pizza implements iMenuItem)
+CREATE TABLE IF NOT EXISTS pizza (
     id INT PRIMARY KEY,
     menu_item_type_id INT,
     name VARCHAR(255) NOT NULL,
     description TEXT,
     is_specialty BOOLEAN NOT NULL,
+    price_display_string VARCHAR(255),
     CONSTRAINT fk_menuItemType FOREIGN KEY (menu_item_type_id) REFERENCES menu_item_type(id)
 );
 
 -- Insert MenuItems with limited initial offerings
-INSERT INTO menu_item (id, menu_item_type_id, name, description, is_specialty) VALUES
+INSERT INTO pizza (id, menu_item_type_id, name, description, is_specialty) VALUES
     (1, 1, 'Build Your Own', 'Create your own masterpiece!', false),
     (2, 1, 'Pepperoni', 'Pepperoni, tomato sauce, cheese', true),
     (3, 1, 'Vegetarian', 'Assorted veggies, tomato sauce, cheese', true),
@@ -56,7 +52,7 @@ CREATE TABLE IF NOT EXISTS menu_item_price (
     menu_item_id INT,
     menu_item_size_id INT,
     price DECIMAL(10, 2) NOT NULL,
-    CONSTRAINT fk_menuItemPrices_menuItem FOREIGN KEY (menu_item_id) REFERENCES menu_item (id),
+    CONSTRAINT fk_menuItemPrices_menuItem FOREIGN KEY (menu_item_id) REFERENCES pizza (id),
     CONSTRAINT fk_menuItemPrices_menuItemSize FOREIGN KEY (menu_item_size_id) REFERENCES menu_item_size(id),
     CHECK (menu_item_size_id IS NULL OR menu_item_size_id IS NOT NULL)
 );
@@ -122,7 +118,7 @@ CREATE TABLE IF NOT EXISTS pizza_default_toppings (
     id INT PRIMARY KEY AUTO_INCREMENT,
     menu_item_id INT,
     topping_id INT,
-    FOREIGN KEY (menu_item_id) REFERENCES menu_item (id),
+    FOREIGN KEY (menu_item_id) REFERENCES pizza (id),
     FOREIGN KEY (topping_id) REFERENCES topping(id)
 );
 

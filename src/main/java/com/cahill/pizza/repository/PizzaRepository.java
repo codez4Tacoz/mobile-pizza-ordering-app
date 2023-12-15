@@ -1,13 +1,13 @@
 package com.cahill.pizza.repository;
 
-import com.cahill.pizza.model.MenuItem;
+import com.cahill.pizza.model.Pizza;
 
 import org.springframework.data.jdbc.repository.query.Query;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 
-public interface MenuItemRepository extends CrudRepository<MenuItem, Integer> {
+public interface PizzaRepository extends CrudRepository<Pizza, Integer> {
 
     @Query("""
             SELECT
@@ -16,10 +16,9 @@ public interface MenuItemRepository extends CrudRepository<MenuItem, Integer> {
                 mi.name,
                 mi.description,
                 mi.is_specialty,
-                array_agg(s.name) as sizeNames,
-                array_agg(p.price) as prices
+                CONCAT(MIN(p.price), ' - ', MAX(p.price)) as price_display_str
             FROM
-                menu_item mi
+                pizza mi
             LEFT JOIN
                 menu_item_price p on mi.id = p.menu_item_id
             LEFT JOIN
@@ -29,7 +28,7 @@ public interface MenuItemRepository extends CrudRepository<MenuItem, Integer> {
             GROUP BY
                 mi.id, t.name, mi.name, mi.description, mi.is_specialty
             """)
-    List<MenuItem> findAll();
+    List<Pizza> findAll();
 
 /*
         SELECT mi.id id, t.name, mi.name, mi.description, mi.is_specialty, s.name, p.price from menu_item mi

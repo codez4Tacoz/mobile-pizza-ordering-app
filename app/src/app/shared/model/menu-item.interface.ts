@@ -1,8 +1,8 @@
 export interface IMenuItem {
+
   id: number;
+  menuCategory: string;
   name: string;
   description?: string;
-  price: number;
-  menuCategory: string;
-  size: string;
+  priceDisplayStr: string;
 }
