@@ -9,21 +9,14 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Entity
-@Table(name="menu_item")
+@Table(name="menu_item_price")
 @NoArgsConstructor
 @AllArgsConstructor
-public class MenuItem {
+public class MenuItemPrice {
 
     @Id
     private Integer id;
-    private String menuCategory;
-    private String name;
-    private String description;
-    private Integer menuItemTypeId;
-    private String size;
+    private Integer menuItemId;
+    private Integer menuItemSizeId;
     private Float price;
-    private boolean isSpecialty;
-
-    //private MenuItemPrice[] prices;
-    //private Topping[] defaultToppings;
 }

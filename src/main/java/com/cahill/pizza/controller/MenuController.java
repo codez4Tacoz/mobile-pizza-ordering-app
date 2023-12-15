@@ -1,8 +1,7 @@
 package com.cahill.pizza.controller;
 
-import com.cahill.pizza.manager.PizzaService;
+import com.cahill.pizza.service.MenuItemService;
 import com.cahill.pizza.model.MenuItem;
-import com.cahill.pizza.model.Pizza;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -20,20 +19,14 @@ import java.util.List;
 @Slf4j
 public class MenuController {
 
-    private final PizzaService pizzaService;
+    private final MenuItemService menuItemService;
 
     @GetMapping("/menu")
     public ResponseEntity<List<MenuItem>> getMenu() {
         try {
             System.out.println("inside method");
-            List<Pizza> pizzas = pizzaService.getAllPizzas();
-
-            List<MenuItem> items = new ArrayList<>();
-
-            System.out.println("inside method pizzas " + pizzas.size());
-            pizzas.forEach(pizza -> {
-                items.add(new MenuItem(pizza.getPizzaId(), pizza.getName(), null, pizza.getBasePrice()));
-            });
+            List<MenuItem> items = menuItemService.getAllMenuItems();
+            System.out.println("menuitems: " + items.size());
 
             return ResponseEntity.ok(items);
         } catch (Exception e) {

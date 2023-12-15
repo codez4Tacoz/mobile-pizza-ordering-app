@@ -2,5 +2,7 @@ export interface IMenuItem {
   id: number;
   name: string;
   description?: string;
-  unit_price: number;
+  price: number;
+  menuCategory: string;
+  size: string;
 }

@@ -1,7 +1,8 @@
 <div class="menu-item">
   <div class="item-header">
     <div class="item-name">{{ item?.name }}</div>
-    <div class="item-price">${{ item?.unit_price?.toFixed(2) }}</div>
+    <div class="item-size">{{ item?.size }}:</div>
+    <div class="item-price">${{ item?.price?.toFixed(2) }}</div>
   </div>
   <div class="item-details">
     <div class="item-description">{{ item?.description }}</div>
