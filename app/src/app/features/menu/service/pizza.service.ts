@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
+import {IPizza} from "../../../shared/model/pizza.interface";
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +12,8 @@ export class PizzaService {
   private baseUrl = '/api';
   constructor(private http: HttpClient) {}
 
-  getPizza(id: number): Observable<any> {
+  getPizza(id: number): Observable<IPizza> {
     const url = `${this.baseUrl}/menu/pizza/${id}`;
-    return this.http.get(url);
+    return this.http.get<IPizza>(url);
   }
 }

@@ -1,1 +1,17 @@
-<p>add-pizza works!</p>
+<h1>Configure Your Pizza</h1>
+
+<h3>{{pizza?.name}}</h3>
+<p>{{pizza?.description}}</p>
+
+<!-- choose at least one size -->
+<mat-chip-listbox *ngIf="pizza">
+  <mat-chip-option *ngFor="let size of pizza.sizeNames; let i = index" [selected]="size === 'Large'">
+    {{ size }} : {{ pizza.prices[i] }}
+  </mat-chip-option>
+</mat-chip-listbox>
+
+<!-- This was going to be a special case for specialty pizzas ...  *ngIf="pizza.isSpecialty" -->
+<!-- or do we show for all?  What if a user wants to remove the sauce from the default toppings of the BYO -->
+<div>
+  show default toppings with ability to remove
+</div>

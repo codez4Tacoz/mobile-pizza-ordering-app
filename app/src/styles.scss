@@ -1,1 +1,138 @@
-/* You can add global styles to this file, and also import other style files */
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+/*
+
+//Custom Theme
+$app-primary-50: #e9f5fb;
+$app-primary-100: #c5e5f5;
+$app-primary-200: #92ceec;
+$app-primary-300: #66bae5;
+$app-primary-400: #3ca7de;
+$app-primary-500: #218dc4;
+$app-primary-600: #1d7eaf;
+$app-primary-700: #15709e;
+$app-primary-800: #0e618b;
+$app-primary-900: #085277;
+
+$app-secondary-50: #e0f4f6;
+$app-secondary-100: #b3e5e9;
+$app-secondary-200: #80d3da;
+$app-secondary-300: #00a7b5;
+$app-secondary-400: #0093a3;
+$app-secondary-500: #007e8f;
+$app-secondary-600: #007385;
+$app-secondary-700: #006375;
+$app-secondary-800: #005161;
+$app-secondary-900: #003e4d;
+
+$app-black: #000;
+$app-white: #fff;
+
+$app-primary-50-contrast: $app-black;
+$app-primary-100-contrast: $app-black;
+$app-primary-200-contrast: $app-black;
+$app-primary-300-contrast: $app-black;
+
+$app-primary-400-contrast: $app-white;
+$app-primary-500-contrast: $app-white;
+$app-primary-600-contrast: $app-white;
+$app-primary-700-contrast: $app-white;
+$app-primary-800-contrast: $app-white;
+$app-primary-900-contrast: $app-white;
+
+$app-secondary-50-contrast: $app-black;
+$app-secondary-100-contrast: $app-black;
+$app-secondary-200-contrast: $app-black;
+$app-secondary-300-contrast: $app-black;
+
+$app-secondary-400-contrast: $app-white;
+$app-secondary-500-contrast: $app-white;
+$app-secondary-600-contrast: $app-white;
+$app-secondary-700-contrast: $app-white;
+$app-secondary-800-contrast: $app-white;
+$app-secondary-900-contrast: $app-white;
+
+$app-primary-scheme: (
+  50: $app-primary-50,
+  100: $app-primary-100,
+  200: $app-primary-200,
+  300: $app-primary-300,
+  400: $app-primary-400,
+  500: $app-primary-500,
+  // 600 is primary primary
+  600: $app-primary-600,
+  700: $app-primary-700,
+  800: $app-primary-800,
+  900: $app-primary-900,
+  contrast: (
+    50: $app-primary-50-contrast,
+    100: $app-primary-100-contrast,
+    200: $app-primary-200-contrast,
+    300: $app-primary-300-contrast,
+    400: $app-primary-400-contrast,
+    500: $app-primary-500-contrast,
+    600: $app-primary-600-contrast,
+    700: $app-primary-700-contrast,
+    800: $app-primary-800-contrast,
+    900: $app-primary-900-contrast,
+  ),
+);
+
+$app-accent-scheme: (
+  50: $app-secondary-50,
+  100: $app-secondary-100,
+  200: $app-secondary-200,
+  300: $app-secondary-300,
+  400: $app-secondary-400,
+  //500 is our primary accent.
+  500: $app-secondary-500,
+  600: $app-secondary-600,
+  700: $app-secondary-700,
+  800: $app-secondary-800,
+  900: $app-secondary-900,
+  contrast: (
+    50: $app-secondary-50-contrast,
+    100: $app-secondary-100-contrast,
+    200: $app-secondary-200-contrast,
+    300: $app-secondary-300-contrast,
+    400: $app-secondary-400-contrast,
+    500: $app-secondary-500-contrast,
+    600: $app-secondary-600-contrast,
+    700: $app-secondary-700-contrast,
+    800: $app-secondary-800-contrast,
+    900: $app-secondary-900-contrast,
+  ),
+);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$app-primary-palette: mat.define-palette($app-primary-scheme, 600, 50, 900);
+$app-accent-palette: mat.define-palette($app-accent-scheme, 500, 50, 900);
+
+// The warn palette is optional (defaults to red).
+$app-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$app-theme: mat.define-light-theme((
+  color: (
+    primary: $app-primary-palette,
+    accent: $app-accent-palette,
+    warn: $app-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($app-theme);
+*/
