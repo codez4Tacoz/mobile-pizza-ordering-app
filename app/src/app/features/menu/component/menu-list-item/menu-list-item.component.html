@@ -1,10 +1,10 @@
 <div class="menu-item">
   <div class="item-header">
     <div class="item-name">{{ item?.name }}</div>
-    <div class="item-price">${{ item?.priceDisplayStr }}</div>
+    <div class="item-price">{{ item?.priceDisplayStr }}</div>
   </div>
   <div class="item-details">
     <div class="item-description">{{ item?.description }}</div>
+    <button class="add-button" (click)="addItemToCart(item)">Add</button>
   </div>
 </div>
-

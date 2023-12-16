@@ -1,13 +1,20 @@
 /* menu-list-item.component.scss */
 
+// Color variables
+$primary-color: #4caf50;
+$primary-dark-color: #45a049;
+$text-color: #333;
+$background-color: #fff;
+$border-color: #ddd;
+
 .menu-item {
-  border: 1px solid #ddd;
+  border: 1px solid $border-color;
   padding: 15px;
   margin-bottom: 15px;
   border-radius: 8px;
-  background-color: #fff;
-  flex: 1; /* Use flex property to distribute width equally among items */
-  box-sizing: border-box; /* Include padding and border in the width calculation */
+  background-color: $background-color;
+  flex: 1;
+  box-sizing: border-box;
 }
 
 .item-header {
@@ -24,13 +31,44 @@
 
 .item-price {
   font-weight: bold;
-  color: #333;
+  color: $text-color;
+}
+.add-button {
+  background-color: #fff;
+  color: $text-color;
+  border: 2px solid $primary-color;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.add-button:hover {
+  background-color: #4CAF50; /* Change to the desired solid green color on hover */
+  color: #fff;
+  cursor: pointer;
 }
 
 .item-details {
+  display: flex;
+  flex-direction: column;
   margin-top: 10px;
 }
 
 .item-description {
   font-size: 0.9em;
+  margin-bottom: 10px;
+}
+
+@media (min-width: 768px) {
+  .item-details {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .item-description {
+    flex: 1;
+    margin-right: 10px;
+  }
 }

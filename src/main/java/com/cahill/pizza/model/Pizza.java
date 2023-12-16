@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 
+import java.util.List;
+
 @Data
 @Table("menu_item")
 @NoArgsConstructor
@@ -18,16 +20,11 @@ public class Pizza implements MenuItem {
     private String menuCategory;
     private String name;
     private String description;
-    private boolean isSpecialty;
-
     private String priceDisplayStr;
 
+    private boolean isSpecialty;
 
-/*    private List<String> sizeNames;
-    private List<String> prices;*/
-
-/*    private Integer menuItemTypeId;
-    private String size;*/
-    //private MenuItemPrice[] prices;
-    //private Topping[] defaultToppings;
+    private List<String> sizeNames;
+    private List<String> prices;
+    private List<String> toppings;
 }
